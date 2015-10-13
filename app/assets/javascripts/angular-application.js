@@ -1,4 +1,4 @@
 //= require_self
 //= require_tree ./angular
 
-AngularRails = angular.module("AngulaRails", []);
+AngulaRails = angular.module("AngulaRails", []);
