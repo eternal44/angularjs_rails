@@ -1,6 +1,7 @@
 <div ng-app="AngulaRails" ng-controller="BooksController"
                           ng-init="urls=<%= @urls.to_json %>;
                           books=<%= @books_json.to_json %>">
+
   <div class="row">
     <div class="col-md-6">
       <h1>Books</h1>
@@ -11,4 +12,20 @@
       </ul>
     </div>
   </div>
+
+  <form ng-submit="save()">
+    <div class="form-group">
+      <label>Title</label>
+      <input type="text" class="form-control" ng-model="book.title" />
+    </div>
+    <div class="form-group">
+      <label>Author</label>
+      <input type="text" class="form-control" ng-model="book.author" />
+    </div>
+    <button class="btn btn-primary">
+      Save
+    </button>
+    </div>
+  </form>
+
 </div>
