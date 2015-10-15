@@ -8,6 +8,7 @@ class BooksController < ApplicationController
 
     respond_to do |format|
       format.html {
+        @books_json = @books.map{ |b| BookSerializer.new(b).serializable_hash }
         @urls = {
           books: books_path
         }
