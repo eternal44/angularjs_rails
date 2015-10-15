@@ -7,7 +7,11 @@ class BooksController < ApplicationController
     @books = Book.all
 
     respond_to do |format|
-      format.html {}
+      format.html {
+        @urls = {
+          books: books_path
+        }
+      }
       format.json { render json: @books }
     end
   end
