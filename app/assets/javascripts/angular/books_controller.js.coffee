@@ -1,6 +1,4 @@
 AngulaRails.controller "BooksController", ($scope, $http) ->
-  # # commenting out doesn't break the app.  Is the getBooks function
-  # # dead code now?
   $scope.getBooks = () ->
     $http({ method: "GET", url: $scope.urls.books })
       .success (response) ->
@@ -10,4 +8,7 @@ AngulaRails.controller "BooksController", ($scope, $http) ->
       .success (response) ->
         $scope.book = {}
         $scope.getBooks()
-
+  $scope.delete = (book) ->
+    $http({ method: "DELETE", url: book.url })
+      .success (response) ->
+        $scope.getBooks()

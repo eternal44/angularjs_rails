@@ -7,6 +7,10 @@
       <h1>Books</h1>
       <ul>
         <li ng-repeat="book in books">
+          <div class="btn btn-default" ng-click="delete(book)">
+            <%# <i class="icon-trash" /> %>
+              Delete
+          </div>
           {{ book.title }} by {{ book.author }}
         </li>
       </ul>

@@ -70,8 +70,8 @@ class BooksController < ApplicationController
   def destroy
     @book.destroy
     respond_to do |format|
-      format.html { redirect_to books_url }
-      format.json { head :no_content }
+      format.html { redirect_to books_url, notice: 'Book was deleted' }
+      format.json { render json: { message: "Book deleted" } }
     end
   end
 
